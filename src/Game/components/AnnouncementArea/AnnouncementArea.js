@@ -13,7 +13,7 @@ const AnnouncementArea = (props) => {
 
   // display at beginning of turn 
   useEffect(() => {
-    setMsg(isYourTurn ? `${name}r turn` : `${name}'s turn`);
+    setMsg(isYourTurn ? `Seu turno` : `É o turno de ${name}'`);
     setMsgLoading(true);
   }, [ctx.currentPlayer, isYourTurn, name]);
 
@@ -27,11 +27,11 @@ const AnnouncementArea = (props) => {
     // on successful assassination
     if (ctx.activePlayers[G.turnLog.target.id] === "loseAssassinate") {
       if (G.turnLog.target.id === playerID) {
-        setMsg("choose an influence to give up (assassinated).");
+        setMsg("Escolha uma influência para perder (ser assassinada).");
         setMsgLoading(false);
       } else {
         setMsg(
-          `waiting for ${G.turnLog.target.name} to give up an influence (assassinated)`
+          `Esperando ${G.turnLog.target.name} perder uma influência (assassinada)`
         );
         setMsgLoading(true);
       }
@@ -66,16 +66,16 @@ const AnnouncementArea = (props) => {
       if (Object.keys(G.turnLog.challenge.loser).length === 0) {
         if (G.turnLog.challenge.challenged.id === playerID) {
           setMsg(
-            `${G.turnLog.challenge.challenger.name} challenges!\n Reveal ${challengeCharacters} or give up a card.`
+            `${G.turnLog.challenge.challenger.name} contesta!\n Revele ${challengeCharacters} ou revele uma carta.`
           );
           setMsgLoading(false);
         } else {
           setMsg(
             `${
-              isChallenger ? "you" : G.turnLog.challenge.challenger.name
-            } challenge${isChallenger ? "" : "s"}!\n Waiting for ${
+              isChallenger ? "Você" : G.turnLog.challenge.challenger.name
+            } contesta${isChallenger ? "" : "s"}!\n Aguardando uma resposta de ${
               G.turnLog.challenge.challenged.name
-            }'s response`
+            }`
           );
           setMsgLoading(true);
         }
@@ -90,11 +90,11 @@ const AnnouncementArea = (props) => {
             setMsg(
               `${
                 G.turnLog.challenge.challenged.id === playerID
-                  ? `your new card is ${G.turnLog.challenge.swapCard.character}.\n`
+                  ? `Sua nova carta é ${G.turnLog.challenge.swapCard.character}.\n`
                   : ""
-              }waiting for ${
+              }esperando ${
                 G.turnLog.challenge.challenger.name
-              } to give up an influence`
+              } perder uma influência`
             );
             setMsgLoading(true);
           }
@@ -104,9 +104,9 @@ const AnnouncementArea = (props) => {
           setMsg(
             `${
               G.turnLog.challenge.challenger.id === playerID
-                ? "your"
-                : `${G.turnLog.challenge.challenger.name}'s`
-            } challenge succeeds.`
+                ? "A contestação sobre "
+                : `${G.turnLog.challenge.challenger.name}`
+            } foi bem sucedida.`
           );
           setMsgLoading(false);
           timer = setTimeout(() => {    // timer to allow players time to read announcements, but also advance the game "automatically" when necessary
@@ -182,25 +182,25 @@ const AnnouncementArea = (props) => {
       } else if (!isYourTurn) {
         let blockedMsg =
           G.turnLog.blockedBy.id === playerID
-            ? `you block`
+            ? `Você bloqueia`
             : `${G.turnLog.blockedBy.name} blocks`;
         if (blocksWith) {
-          blockedMsg += ` with ${G.turnLog.blockedBy.character}`;
+          blockedMsg += ` com ${G.turnLog.blockedBy.character}`;
         }
         blockedMsg += "!";
         setMsg(
-          `${blockedMsg}\nwaiting for ${
+          `${blockedMsg}\nAguardando ${
             blocksWith ? "a" : `${name}'s`
-          } response`
+          } resposta`
         );
         setMsgLoading(true);
       } else {
         setMsg(
-          `${G.turnLog.blockedBy.name} blocks your ${
+          `${G.turnLog.blockedBy.name} bloqueia seu ${
             G.turnLog.action === "assassinate"
-              ? "assassination"
+              ? "assassinato"
               : G.turnLog.action
-          }${blocksWith ? ` with ${G.turnLog.blockedBy.character}` : ""}.`
+          }${blocksWith ? ` com a ${G.turnLog.blockedBy.character}` : ""}.`
         );
         setMsgLoading(false);
       }
@@ -251,7 +251,7 @@ const AnnouncementArea = (props) => {
     // any blockable or challengable action (trying to generalize when I can)
     else if (ctx.activePlayers[ctx.currentPlayer] !== "action") {
       if (!isYourTurn) {
-        setMsg(`${name} attempts to ${G.turnLog.action}.`);
+        setMsg(`${name} tentou ${G.turnLog.action}.`);
         setMsgLoading(false);
       } else {
         setMsg(`waiting for others to respond`);

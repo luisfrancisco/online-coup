@@ -171,39 +171,39 @@ const ChoosingPanel = ({ G, ctx, playerID, moves, gameID }) => {
       if (ctx.activePlayers[playerID] === "block") {
         temp.push(
           <button key={uniqid()} className="choice-btn" onClick={allow}>
-            allow
+            Permitir
           </button>
         );
         temp.push(
           <button key={uniqid()} className="choice-btn" onClick={block}>
-            block
+            Bloquear
           </button>
         );
       } else if (ctx.activePlayers[playerID] === "challenge") {
         temp.push(
           <button key={uniqid()} className="choice-btn" onClick={allow}>
-            allow
+            Permitir
           </button>
         );
         temp.push(
           <button key={uniqid()} className="choice-btn" onClick={challenge}>
-            challenge
+            Contestar
           </button>
         );
       } else if (ctx.activePlayers[playerID] === "blockOrChallenge") {
         temp.push(
           <button key={uniqid()} className="choice-btn" onClick={allow}>
-            allow
+            Permitir
           </button>
         );
         temp.push(
           <button key={uniqid()} className="choice-btn" onClick={block}>
-            block
+            Bloquear
           </button>
         );
         temp.push(
           <button key={uniqid()} className="choice-btn" onClick={challenge}>
-            challenge
+            Contestar
           </button>
         );
       }

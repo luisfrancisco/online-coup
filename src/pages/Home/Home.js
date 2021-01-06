@@ -91,9 +91,9 @@ const Home = (props) => {
 
   return (
     <Lobby>
-      <span className="title join-title">join game</span>
+      <span className="title join-title">Entrar em uma Sala</span>
       <div className="input-info-area">
-        <p style={{ margin: "0" }}>room id</p>
+        <p style={{ margin: "0" }}>ID da Sala</p>
       </div>
       <input
         id="roomIdentification"
@@ -106,7 +106,7 @@ const Home = (props) => {
         className="input-field"
       />
       <div className="input-info-area">
-        <p style={{ margin: "0" }}>your name</p>
+        <p style={{ margin: "0" }}>Seu Nome</p>
         <p style={{ margin: "0 0 0 auto" }}>{jNameCount}</p>
       </div>
       <div className="user-input">
@@ -127,12 +127,12 @@ const Home = (props) => {
         disabled={room.length !== roomIDLength || jName.length === 0}
         onClick={() => joinRoom(room, jName)}
       >
-        join
+        Entrar
       </button>
       <div className="error-msg">{errMsg}</div>
-      <span className="title create-title">create lobby</span>
+      <span className="title create-title">Criar Sala</span>
       <div className="input-info-area">
-        <p style={{ margin: "0" }}># players: {num}</p>
+        <p style={{ margin: "0" }}>Nº de jogadores: {num}</p>
       </div>
       <input
         type="range"
@@ -144,7 +144,7 @@ const Home = (props) => {
         className="input-slider"
       />
       <div className="input-info-area">
-        <p style={{ margin: "0" }}>your name</p>
+        <p style={{ margin: "0" }}>Seu Nome</p>
         <p style={{ margin: "0 0 0 auto" }}>{cNameCount}</p>
       </div>
       <div className="user-input">
@@ -160,7 +160,7 @@ const Home = (props) => {
         />
       </div>
       <button className="lobby-btn" disabled={cName.length === 0} onClick={createRoom}>
-        create
+        Criar
       </button>
     </Lobby>
   );

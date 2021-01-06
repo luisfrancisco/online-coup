@@ -110,13 +110,13 @@ const YourPlayer = ({ G, ctx, playerID, moves }) => {
 
   const bottomRow = () => {
     if (G.gameOver.playAgain.includes(playerID)) {
-      return getBottomRow("ready", <FontAwesomeIcon icon={faDoorOpen} />);
+      return getBottomRow("Pronto!", <FontAwesomeIcon icon={faDoorOpen} />);
     } else if (G.gameOver.left.includes(playerID)) {
-      return getBottomRow("left", <FontAwesomeIcon icon={faDoorClosed} />);
+      return getBottomRow("Saiu", <FontAwesomeIcon icon={faDoorClosed} />);
     } else if (player.isOut) {
-      return getBottomRow("exiled", <FontAwesomeIcon icon={faSkullCrossbones} />);
+      return getBottomRow("Exilado", <FontAwesomeIcon icon={faSkullCrossbones} />);
     } else {
-      return getBottomRow("winner", <FontAwesomeIcon icon={faCrown} />);
+      return getBottomRow("Vencedor", <FontAwesomeIcon icon={faCrown} />);
     }
   };
 
@@ -127,8 +127,8 @@ const YourPlayer = ({ G, ctx, playerID, moves }) => {
       })}
     >
       <div className="player-body">
-        <div className="player-name">{player.name} (You)</div>
-        <div className="no-gutters d-flex" style={{ height: "60%" }}>
+        <div className="player-name">{player.name} &nbsp;(Você)</div>
+        <div className="no-gutters d-flex hand" style={{ height: "60%" }}>
           {hand}
         </div>
         {player.isOut || gameOver ? (

@@ -1,20 +1,11 @@
 @import "../../../styles.scss";
 
-/*.character-card {
-  height: 100%;
-  width: 50%;
-
-  border: 0.12vw solid var(--card-border-color);
-  border-radius:  .25em;
-}*/
-
 .character-card {
   height: 100%;
-  width: auto;
-  border: 0;
-  border-radius: .25em;
+  width: 50%;
   box-shadow: #66737259 0px 0px 7px;
-  margin: 1%;
+  border: 0.12vw solid var(--card-border-color);
+  border-radius: 6%;
 }
 
 .character-card-discarded {
@@ -27,19 +18,13 @@
   animation: cardAppear var(--animation-speed) linear forwards;
 }
 
-.hand {
-  align-items: center;
-    justify-content: space-evenly;
-    justify-content: center;
-}
-
 .player {
   height: calc(1.17 * var(--player-width));
   max-height: 86%;
   width: var(--player-width);
 
   background: var(--player-color);
-  border: 0 solid var(--player-border-color);
+  border: var(--border-width) solid var(--player-border-color);
   border-radius: calc(0.7vw + 0.7vh);
 
   font-size: 1.5vw;
@@ -58,7 +43,7 @@
     position: absolute;
     content: "";
     width: 100%;
-    height: 101%;
+    height: 101.8%;
     background: var(--player-shadow-color);
     box-shadow: 0 0 0 var(--border-width) var(--player-border-color);
     border-radius: inherit;
@@ -121,14 +106,14 @@
   padding: 0 4.5% 1% 4.5%;
 }
 
-.player-name {
+.your-player {
   height: 20%;
+  color:#2c6575;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'harlean';
   font-size: 1.1em;
-  color:#2c6575;
   text-align: center;
   word-break: break-all;
   line-height: 0.85;

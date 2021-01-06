@@ -32,7 +32,7 @@ const Actions = ({ G, ctx, playerID, moves }) => {
       <div className={classNames("general-actions", { "actions-active-enter": isYourTurn })}>
         <div className="btn-wrapper">
           <button className="action-btn" onClick={income} disabled={!isYourTurn || mustCoup || done}>
-            income
+            Renda
           </button>
         </div>
         <div className="btn-wrapper">
@@ -41,19 +41,19 @@ const Actions = ({ G, ctx, playerID, moves }) => {
             onClick={() => prepAction("foreign aid")}
             disabled={!isYourTurn || mustCoup || done}
           >
-            foreign aid
+            Ajuda Externa
           </button>
         </div>
         <div className="btn-wrapper">
           <button className="action-btn" onClick={() => prepAction("coup")} disabled={!isYourTurn || !canCoup || done}>
-            coup
+            Golpe de Estado
           </button>
         </div>
       </div>
       <div className={classNames("character-actions", { "actions-active-enter": isYourTurn })}>
         <div className="btn-wrapper">
           <button className="action-btn" onClick={() => prepAction("tax")} disabled={!isYourTurn || mustCoup || done}>
-            tax
+           <span style={{color:"#d91378"}}> Taxar</span>
           </button>
         </div>
         <div className="btn-wrapper">
@@ -62,12 +62,12 @@ const Actions = ({ G, ctx, playerID, moves }) => {
             onClick={() => prepAction("assassinate")}
             disabled={!isYourTurn || !canAssassinate || mustCoup || done}
           >
-            assassinate
+            Assassinar
           </button>
         </div>
         <div className="btn-wrapper">
           <button className="action-btn" onClick={() => prepAction("steal")} disabled={!isYourTurn || mustCoup || done}>
-            steal
+          <span style={{color:"#2094c0"}}> Extorquir </span>
           </button>
         </div>
         <div className="btn-wrapper">
@@ -76,7 +76,7 @@ const Actions = ({ G, ctx, playerID, moves }) => {
             onClick={() => prepAction("exchange")}
             disabled={!isYourTurn || mustCoup || done}
           >
-            exchange
+            <span style={{color:"#65bc46"}}>Trocar</span>
           </button>
         </div>
       </div>

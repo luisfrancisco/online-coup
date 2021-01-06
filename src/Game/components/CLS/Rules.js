@@ -4,23 +4,23 @@ import uniqid from "uniqid";
 import "./Rules.scss";
 
 const genDescs = [
-  ["Income", "take 1 coin"],
-  ["Foreign Aid", "take 2 coins"],
-  ["Coup", "pay 7 coins", "choose player to lose guessed character upon correct guess"],
+  ["Renda", "take 1 coin"],
+  ["Ajuda Externa", "take 2 coins"],
+  ["Golpe", "pay 7 coins", "choose player to lose guessed character upon correct guess"],
 ];
 
 const charActDescs = [
-  ["Tax", "Duke", "take 3 coins"],
-  ["Assassinate", "Assassin", "pay 3 coins", "choose player to lose a character"],
-  ["Steal", "Captain", "take at most 2 coins from another player"],
-  ["Exchange", "Ambassador", "exchange hand with top 2 cards of deck"],
+  ["Taxar", "Duke", "take 3 coins"],
+  ["Assassinar", "Assassin", "pay 3 coins", "choose player to lose a character"],
+  ["Extorquir", "Capitão", "take at most 2 coins from another player"],
+  ["Exchange", "Embaixador", "exchange hand with top 2 cards of deck"],
 ];
 
 const counterActDesc = [
-  ["Duke", "blocks foreign aid"],
-  ["Ambassador", "blocks stealing"],
-  ["Captain", "blocks stealing"],
-  ["Contessa", "blocks assassination"],
+  ["Duque", "blocks foreign aid"],
+  ["Embaixador", "blocks stealing"],
+  ["Capitão", "blocks stealing"],
+  ["Condessa", "blocks assassination"],
 ];
 
 const numPages = 3;
@@ -32,7 +32,7 @@ const pagesArr = Array(numPages)
 const Page1 = (
   <>
     <div className="rules-intro-container">
-      <span className="rules-intro">take one action</span>
+      <span className="rules-intro">Realize uma Ação</span>
       <span className="rules-intro-footer">(If 10+ coins must choose to launch Coup)</span>
     </div>
     <div className="rules-desc-container">

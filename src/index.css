@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap");
 
 #root {
@@ -10,7 +11,7 @@
   background-color: var(--bg-color);
 
   /* colors custom properties */
-  --bg-color: #f1f1f1;
+  --bg-color: #fff;
   --text-color: #393e46;
 
   --player-color: #eeeeee;
@@ -39,8 +40,8 @@
   --player-step: 0.27vw;
   --your-player-width: 23vw;
   --button-height: 3.8vw;
-  --btn-step: 0.25vw;
-  --border-width: 0.165vw;
+  --btn-step: 0.15vw;
+  --border-width: 0vw;
   --player-turn-width: 0.25vw;
 
   /* timing custom properties */
@@ -54,3 +55,9 @@
 * {
   -webkit-user-drag: none;
 }
+
+.cls-title {font-family: harlean, sans-serif;
+
+  font-weight: 400;
+  
+  font-style: normal;}

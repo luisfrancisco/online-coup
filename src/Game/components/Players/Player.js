@@ -125,7 +125,7 @@ const Player = ({ G, ctx, playerID, moves, i }) => {
     >
       <div className="player-body">
         <div className="player-name">{player.name}</div>
-        <div className="no-gutters d-flex" style={{ height: "60%" }}>
+        <div className="no-gutters d-flex hand" style={{ height: "60%"  }}>
           {hand}
         </div>
         {player.isOut || gameOver ? (

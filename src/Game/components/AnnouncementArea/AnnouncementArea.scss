@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  
 }
 
 .announcement-area-offset {
@@ -17,10 +18,11 @@
   text-align: center;
   word-break: break-word;
   width: 100%;
-
-  font-size: 2.6vw;
+  font-family: 'harlean';
+ color:#2c6575;
+  font-size: 5vw;
   font-weight: 400;
-  text-transform: uppercase;
+
   line-height: 1;
   white-space: pre-wrap;
 
